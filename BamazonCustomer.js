@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 	port: 3306,
 	user: 'root',
 	password: 'magicman86',
-	database: 'bamazon'
+	database: 'Bamazon'
 });
 
 //connects to the datbase y error handling
@@ -24,13 +24,13 @@ connection.connect(function(err) {
 })
 
 //This will display the bamazon catalog,
-connection.query("SELECT ItemId, Price ,ProductName FROM products GROUP BY price WHERE stockquantity > 0",
+connection.query("SELECT  Price ,ProductName FROM products GROUP BY price",
  function(err,res){
 		if(err) {
 			console.log(err);
 			return;
 		}
-		console.log(res);//not sure what this does?
+		console.log(res);//not sure what this does
 		})
 
 //now lets prompt the user 
